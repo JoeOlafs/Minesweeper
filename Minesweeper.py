@@ -59,7 +59,7 @@ class Board:
           
           return True
 
-     def __str__(self):
+     def __str__(self): # Dispaly board
           visible_board = [[None for _ in range(self.dim_size)]for _ in range(self.dim_size)]
           for row in range(self.dim_size):
                for col in range(self.dim_size):
@@ -105,7 +105,7 @@ def play(dim_size=10, num_bombs=10):
      safe = True
      while len(board.dug) < board.dim_size ** 2 - num_bombs:
           print(board)
-          user_input = re.split('.(\\s)*',input('Where would you like to dig? Input as row,col:'))
+          user_input = re.split(',(\\s)*',input('Where would you like to dig? Input as row,col:'))
           row = int(user_input[0])
           col = int(user_input[-1])
           if row < 0 or row >= board.dim_size or col < 0 or col > board.dim_size:
